@@ -1,0 +1,34 @@
+﻿<Window x:Class="CSViewer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CSViewer"
+        mc:Ignorable="d"
+        Title="CSViewer" SizeToContent="WidthAndHeight" Background="Black">
+    
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="64*"/>
+                <ColumnDefinition Width="41*"/>
+                <ColumnDefinition Width="687*"/>
+            </Grid.ColumnDefinitions>
+            <Menu KeyboardNavigation.TabNavigation="Cycle" VerticalAlignment="Top" Background="DarkGray" Height="21" Grid.ColumnSpan="3">
+                <MenuItem Header="File">
+                    <MenuItem Header="New" Click="New_Click"/>
+                    <MenuItem Header="Open" Click="Open_Click"/>
+                    <MenuItem Header="Save" Click="Save_Click"/>
+                    <MenuItem Header="Save As" Click="SaveAs_Click"/>
+                </MenuItem>
+                <MenuItem Header="Edit">
+                    <MenuItem Header="Copy" Command="ApplicationCommands.Copy"/>
+                    <MenuItem Header="Cut" Command="ApplicationCommands.Cut"/>
+                    <MenuItem Header="Paste" Command="ApplicationCommands.Paste"/>
+                </MenuItem>
+            </Menu>
+            <DataGrid Name="dt" ItemsSource="{Binding}"  HorizontalAlignment="Center" Height="398" VerticalAlignment="Top" Width="792" Margin="0,21,0,0" Background="Gray" SelectionChanged="DataGrid_SelectionChanged" Grid.ColumnSpan="3"/>
+
+            
+                
+        </Grid>
+</Window>
